@@ -10,4 +10,9 @@ io.on('connection', client => {
         console.log('Message!!', payload)
         io.emit('Message',{admin:'New Message'})
     })
+
+    client.on('cast-message',(payload)=>{
+        io.emit('new-message',payload)
+    })
+
 });
