@@ -8,7 +8,7 @@ io.on('connection', client => {
 
     client.on('Message',(payload)=>{
         console.log('Message!!', payload)
-        io.emit('Message',{admin:'New Message'})
+        io.emit('Message',{admin:'New Message on Server'})
     })
 
     client.on('cast-message',(payload)=>{
