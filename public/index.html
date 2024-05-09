@@ -23,6 +23,10 @@
         socket.on('Message',function(payload){
             console.log('Listening:',payload)
         })
+
+        socket.on('new-message',function(payload){
+            console.log('Message:',payload)
+        })
     </script>
 </body>
 </html>

@@ -1,7 +1,9 @@
 const {io} = require('../index')
 //Sockets Messages
 io.on('connection', client => {
+
     console.log('Client Connected')
+
     client.on('disconnect', () => { 
         console.log('Client Disconnected') 
     });
@@ -12,7 +14,9 @@ io.on('connection', client => {
     })
 
     client.on('cast-message',(payload)=>{
-        io.emit('new-message',payload)
+        //io.emit('new-message', payload) //All
+        console.log('Message!!', payload)
+        client.broadcast.emit('new-message', payload) //All but itself
     })
 
 });
